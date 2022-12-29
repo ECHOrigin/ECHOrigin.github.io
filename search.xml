@@ -4,12 +4,18 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2022/12/29/test3/"/>
-      <url>/2022/12/29/test3/</url>
+      <title>安卓2</title>
+      <link href="/2022/12/29/test2/"/>
+      <url>/2022/12/29/test2/</url>
       
-        <content type="html"><![CDATA[<p>##这是第三篇文章</p>]]></content>
+        <content type="html"><![CDATA[<p>##这是第二篇文章</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 安卓 </category>
+          
+      </categories>
       
       
     </entry>
@@ -18,12 +24,20 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2022/12/29/test2/"/>
-      <url>/2022/12/29/test2/</url>
+      <link href="/2022/12/29/test3/"/>
+      <url>/2022/12/29/test3/</url>
       
-        <content type="html"><![CDATA[<p>##这是第二篇文章</p>]]></content>
+        <content type="html"><![CDATA[<p>##这是第三篇文章</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+            <tag> 表格 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -37,6 +51,43 @@
         <content type="html"><![CDATA[<p>##这是第四篇文章</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+            <tag> sql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安卓1</title>
+      <link href="/2022/12/29/test1/"/>
+      <url>/2022/12/29/test1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="MediaPlayer"><a href="#MediaPlayer" class="headerlink" title="MediaPlayer"></a>MediaPlayer</h3><h5 id="activity-main-xml"><a href="#activity-main-xml" class="headerlink" title="activity_main.xml"></a>activity_main.xml</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    tools:context=&quot;.MainActivity&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;SeekBar</span><br><span class="line">        android:layout_width=&quot;fill_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:id=&quot;@+id/seekbar&quot;</span><br><span class="line">        android:layout_weight=&quot;0.04&quot;/&gt;</span><br><span class="line">    &lt;ImageButton</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:src=&quot;@android:drawable/ic_media_play&quot;</span><br><span class="line">        android:onClick=&quot;playOrPause&quot;</span><br><span class="line">        android:id=&quot;@+id/main_ib_button&quot;</span><br><span class="line"></span><br><span class="line">        tools:ignore=&quot;OnClick&quot; /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure><h5 id="MainActivity-java"><a href="#MainActivity-java" class="headerlink" title="MainActivity.java"></a>MainActivity.java</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">package cn.itcast.mediaplayer;</span><br><span class="line"></span><br><span class="line">import androidx.appcompat.app.AppCompatActivity;</span><br><span class="line">import androidx.core.app.ActivityCompat;</span><br><span class="line"></span><br><span class="line">import android.Manifest;</span><br><span class="line">import android.media.AudioManager;</span><br><span class="line">import android.media.MediaPlayer;</span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.os.SystemClock;</span><br><span class="line">import android.util.Log;</span><br><span class="line">import android.view.View;</span><br><span class="line">import android.widget.ImageButton;</span><br><span class="line">import android.widget.ImageView;</span><br><span class="line">import android.widget.SeekBar;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class MainActivity extends AppCompatActivity  &#123;</span><br><span class="line"></span><br><span class="line">    private ImageButton main_ib_button;</span><br><span class="line">    private MediaPlayer mediaPlayer;</span><br><span class="line">    private SeekBar main_seekBar;</span><br><span class="line">    private Boolean isplay=false;</span><br><span class="line">    private Mythred mythred;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        main_ib_button = findViewById(R.id.main_ib_button);</span><br><span class="line">        main_seekBar = findViewById(R.id.seekbar);</span><br><span class="line"></span><br><span class="line">        main_seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onStartTrackingTouch(SeekBar seekBar) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onStopTrackingTouch(SeekBar seekBar) &#123;</span><br><span class="line"></span><br><span class="line">                int progress= main_seekBar.getProgress();</span><br><span class="line">                mediaPlayer.seekTo(progress);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void playOrPause(View view)&#123;</span><br><span class="line">        if(mediaPlayer==null)&#123;</span><br><span class="line">            isplay = true;</span><br><span class="line">            mediaPlayer = MediaPlayer.create(this, R.raw.nnn);</span><br><span class="line">            mediaPlayer.start();</span><br><span class="line">            main_ib_button.setImageResource(android.R.drawable.ic_media_pause);</span><br><span class="line">            int lengthoftime = mediaPlayer.getDuration();</span><br><span class="line">            main_seekBar.setMax(lengthoftime);</span><br><span class="line">            mythred = new Mythred();</span><br><span class="line">            mythred.start();</span><br><span class="line"></span><br><span class="line">            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void onCompletion(MediaPlayer mp) &#123;</span><br><span class="line">                    isplay = false;</span><br><span class="line">                    mythred = null;</span><br><span class="line">                    main_ib_button.setImageResource(android.R.drawable.ic_media_play);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; else if(mediaPlayer.isPlaying())&#123;</span><br><span class="line">            isplay = false;</span><br><span class="line">            mediaPlayer.pause();</span><br><span class="line">            main_ib_button.setImageResource(android.R.drawable.ic_media_play);</span><br><span class="line">            mythred= null;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            isplay = true;</span><br><span class="line">            mediaPlayer.start();</span><br><span class="line">            main_ib_button.setImageResource(android.R.drawable.ic_media_pause);</span><br><span class="line">            mythred = new Mythred();</span><br><span class="line">            mythred.start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class Mythred extends Thread&#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            super.run();</span><br><span class="line">            while (main_seekBar.getProgress()&lt;= main_seekBar.getMax())&#123;</span><br><span class="line">                int currentPosition = mediaPlayer.getCurrentPosition();</span><br><span class="line">                Log.i(&quot;test&quot;,&quot;currentPosition&quot;+currentPosition);</span><br><span class="line">                main_seekBar.setProgress(currentPosition);</span><br><span class="line">                SystemClock.sleep(1000);</span><br><span class="line"></span><br><span class="line">                if (!isplay)&#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h5 id="Manifest-xml"><a href="#Manifest-xml" class="headerlink" title="Manifest.xml"></a>Manifest.xml</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;cn.itcast.mediaplayer&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;application</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.MainActivity&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot;/&gt;</span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure><p><img src="C:\Users\aants\AppData\Roaming\Typora\typora-user-images\image-20201227152538331.png" alt="image-20201227152538331"></p><p><img src="C:\Users\aants\AppData\Roaming\Typora\typora-user-images\image-20201227152910615.png" alt="image-20201227152910615"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安卓 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+            <tag> 表格 </tag>
+            
+            <tag> 表单验证 </tag>
+            
+        </tags>
       
     </entry>
     
