@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown</title>
+  <style>
+    body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .countdown-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+
+    /* Style for lunch countdown */
+    .lunch-countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: green;
+      overflow: hidden;
+    }
+
+    .lunch-countdown .title {
+      font-size: 33px;
+    }
+
+    .lunch-countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .lunch-countdown .clock span,
+    .lunch-countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .lunch-countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .lunch-countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next"></p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour"></span>
+      <i>:</i>
+      <span id="minutes"></span>
+      <i>:</i>
+      <span id="second"></span>
+    </p>
+    <p class="tips"></p>
+  </div>
+
+  <!-- Lunch Countdown -->
+  <div class="lunch-countdown">
+    <p class="title">午休倒计时</p>
+    <p class="clock">
+      <span id="lunch-hour"></span>
+      <i>:</i>
+      <span id="lunch-minutes"></span>
+      <i>:</i>
+      <span id="lunch-second"></span>
+    </p>
+  </div>
+
+  <script>
+  let hourObj = document.querySelector('#hour');
+  let minuteObj = document.querySelector('#minutes');
+  let secondObj = document.querySelector('#second');
+  let lunchHourObj = document.querySelector('#lunch-hour');
+  let lunchMinuteObj = document.querySelector('#lunch-minutes');
+  let lunchSecondObj = document.querySelector('#lunch-second');
+  let next = document.querySelector('.next');
+  let tips = document.querySelector('.tips');
+  let endOfWorkFlag = false;
+  let lunchTimeFlag = false;
+
+  function updateEndOfWorkCountdown() {
+    // Current timestamp
+    let d1 = +new Date();
+    // Target timestamp for end of work (5:00 PM)
+    let endTime = new Date(d1);
+    endTime.setHours(17, 0, 0, 0);
+
+    // Calculate the time difference for end of work
+    let endTimeDiff = (endTime - d1) / 1000;
+    let endH = parseInt(endTimeDiff / 60 / 60 % 24) + '';
+    let endM = parseInt(endTimeDiff / 60 % 60) + '';
+    let endS = parseInt(endTimeDiff % 60) + '';
+
+    // Update end of work countdown
+    hourObj.innerHTML = endH.padStart(2, '0');
+    minuteObj.innerHTML = endM.padStart(2, '0');
+    secondObj.innerHTML = endS.padStart(2, '0');
+
+    if (endTimeDiff <= 0) {
+      endOfWorkFlag = true;
+      clearInterval(endOfWorkInterval);
+      hourObj.innerHTML = '00';
+      minuteObj.innerHTML = '00';
+      secondObj.innerHTML = '00';
+      
+      // 下面添加关闭定时器的代码
+      clearInterval(endOfWorkInterval);
+    }
+  }
+
+  function updateLunchCountdown() {
+    // Current timestamp
+    let d1 = +new Date();
+    // Target timestamp for lunchtime (11:30 AM)
+    let lunchTime = new Date(d1);
+    lunchTime.setHours(11, 30, 0, 0);
+
+    // Calculate the time difference for lunchtime
+    let lunchTimeDiff = (lunchTime - d1) / 1000;
+    let lunchH = parseInt(lunchTimeDiff / 60 / 60 % 24) + '';
+    let lunchM = parseInt(lunchTimeDiff / 60 % 60) + '';
+    let lunchS = parseInt(lunchTimeDiff % 60) + '';
+
+    // Update lunch countdown
+    lunchHourObj.innerHTML = lunchH.padStart(2, '0');
+    lunchMinuteObj.innerHTML = lunchM.padStart(2, '0');
+    lunchSecondObj.innerHTML = lunchS.padStart(2, '0');
+
+    if (lunchTimeDiff <= 0) {
+      lunchTimeFlag = true;
+      clearInterval(lunchTimeInterval);
+      lunchHourObj.innerHTML = '00';
+      lunchMinuteObj.innerHTML = '00';
+      lunchSecondObj.innerHTML = '00';
+      
+      // 下面添加关闭定时器的代码
+      clearInterval(lunchTimeInterval);
+    }
+  }
+
+  function updateCurrentTime() {
+    let date = new Date();
+    next.innerHTML = `今天是 ${date.toLocaleDateString()}`;
+    tips.innerHTML = `当前时间是 ${date.toLocaleTimeString()}`;
+  }
+
+   function startCountdown() {
+    // 手动调用倒计时函数
+    updateEndOfWorkCountdown();
+    updateLunchCountdown();
+    updateCurrentTime();
+
+    // 设置下班时间的定时器
+    let endOfWorkInterval = setInterval(updateEndOfWorkCountdown, 1000);
+
+    // 设置午休时间的定时器
+    let lunchTimeInterval = setInterval(updateLunchCountdown, 1000);
+
+    // 设置更新当前时间的定时器
+    setInterval(updateCurrentTime, 1000);
+  }
+
+  // 在页面加载完成后调用 startCountdown 函数
+  window.addEventListener('load', startCountdown);
+</script>
+</body>
+
+</html>
