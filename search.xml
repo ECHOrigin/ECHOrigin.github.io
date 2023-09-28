@@ -21,7 +21,7 @@
       <link href="/2023/09/19/LocalDateTime/"/>
       <url>/2023/09/19/LocalDateTime/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@JsonFormat(shape = JsonFormat.Shape.STRING, pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@JsonFormat(shape = JsonFormat.Shape.STRING, pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Transactional(rollbackFor=Exception.class)</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
