@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>sql</title>
+      <link href="/2023/10/16/sql/"/>
+      <url>/2023/10/16/sql/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;fileList&quot; resultType=&quot;com.zjjg.law.common.vo.RtFileListVO&quot;&gt;</span><br><span class="line">        SELECT id, file_no, type, business_date</span><br><span class="line">        FROM (</span><br><span class="line">        SELECT fb.id, fb.file_no, fb.type, fd.business_date</span><br><span class="line">        FROM file_base fb</span><br><span class="line">        LEFT JOIN file_detail fd ON fb.id = fd.file_base_id</span><br><span class="line">        UNION</span><br><span class="line">        SELECT nld.id, nld.non_litigation_no, nld.type, NULL as business_date</span><br><span class="line">        FROM non_litigation_detail nld</span><br><span class="line">        ) AS combined</span><br><span class="line">        &lt;where&gt;</span><br><span class="line">            &lt;if test=&quot;query.type != null and query.type != &#x27;&#x27;&quot;&gt;</span><br><span class="line">                AND (type LIKE CONCAT(&#x27;%&#x27;, #&#123;query.type&#125;, &#x27;%&#x27;))</span><br><span class="line">            &lt;/if&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/where&gt;</span><br><span class="line">    &lt;/select&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> sql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>枚举</title>
       <link href="/2023/09/23/%E6%9E%9A%E4%B8%BE/"/>
       <url>/2023/09/23/%E6%9E%9A%E4%B8%BE/</url>
