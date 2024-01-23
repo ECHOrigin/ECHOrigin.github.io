@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown</title>
+  <style>
+    body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 样式定义开始 */
+
+    /* 设置外层容器样式，用于排列倒计时和午休倒计时 */
+    .countdown-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* 倒计时样式 */
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      overflow: hidden;
+    }
+
+    /* 下班倒计时的样式 */
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    /* 标题样式 */
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    /* 提示文本样式 */
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    /* 辅助小字体样式 */
+    .countdown small {
+      font-size: 17px;
+    }
+
+    /* 倒计时数字样式 */
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    /* 倒计时数字框的样式 */
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    /* 倒计时数字的样式 */
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+
+    /* 午休倒计时的样式 */
+    .lunch-countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: green;
+      overflow: hidden;
+    }
+
+    /* 午休倒计时标题的样式 */
+    .lunch-countdown .title {
+      font-size: 33px;
+    }
+
+    /* 午休倒计时数字的样式 */
+    .lunch-countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .lunch-countdown .clock span,
+    .lunch-countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    /* 午休倒计时数字框的样式 */
+    .lunch-countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    /* 午休倒计时数字的样式 */
+    .lunch-countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+
+    /* 样式定义结束 */
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next"></p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour"></span>
+      <i>:</i>
+      <span id="minutes"></span>
+      <i>:</i>
+      <span id="second"></span>
+    </p>
+    <p class="tips"></p>
+  </div>
+
+  <!-- Lunch Countdown -->
+  <div class="lunch-countdown">
+    <p class="title">午休倒计时</p>
+    <p class="clock">
+      <span id="lunch-hour"></span>
+      <i>:</i>
+      <span id="lunch-minutes"></span>
+      <i>:</i>
+      <span id="lunch-second"></span>
+    </p>
+  </div>
+
+  <script>
+    let hourObj = document.querySelector('#hour')
+    let minuteObj = document.querySelector('#minutes')
+    let secondObj = document.querySelector('#second')
+    let lunchHourObj = document.querySelector('#lunch-hour')
+    let lunchMinuteObj = document.querySelector('#lunch-minutes')
+    let lunchSecondObj = document.querySelector('#lunch-second')
+    let next = document.querySelector('.next')
+    let tips = document.querySelector('.tips')
+    let flag
+
+    function fn() {
+      // 当前时间戳
+      let d1 = +new Date();
+      // 目标时间戳
+      let d2 = +new Date();
+
+      // 设置目标时间为今天的17:00:00
+      let targetTime = new Date(d2);
+      targetTime.setHours(17, 0, 0, 0);
+
+      // 如果当前时间已经超过目标时间，将目标时间设置为明天的17:00:00
+      if (d1 >= d2) {
+        targetTime.setDate(targetTime.getDate() + 1);
+        d2 = +targetTime; // 更新目标时间戳
+      }
+
+      // 计算时间差
+      let t = (d2 - d1) / 1000;
+
+      // 其余代码保持不变
+
+      // 倒计时
+      // 时分秒公式
+      let h = parseInt(t / 60 / 60 % 24) + ''
+      let m = parseInt(t / 60 % 60) + ''
+      let s = parseInt(t % 60) + ''
+      // 不足两位补零并显示在页面中
+      hourObj.innerHTML = h.padStart(2 , '0')
+      minuteObj.innerHTML = m.padStart(2 , '0')
+      secondObj.innerHTML = s.padStart(2 , '0')
+
+      // 显示当前时间
+      let date = new Date()
+      next.innerHTML = `今天是 ${date.toLocaleDateString()}`
+      tips.innerHTML = `当前时间是 ${date.toLocaleTimeString()}`
+
+      // 时间到了关定时器
+      if(d2 - d1 <= 0) flag = true
+    }
+
+    // 开启定时器
+    fn()  // 开启定时器之前执行一次避免出现空白
+    let timerId = setInterval(fn , 1000)
+    if(flag) {
+      clearInterval(timerId)
+      hourObj.innerHTML = '00'
+      minuteObj.innerHTML = '00'
+      secondObj.innerHTML = '00'
+    }
+
+    function fn2() {
+      // 当前时间戳
+      let d1 = +new Date();
+      // 目标时间戳
+      let d2 = +new Date();
+
+      // 设置目标时间为今天的11:30:00
+      let targetTime = new Date(d2);
+      targetTime.setHours(11, 30, 0, 0);
+
+      // 如果当前时间已经超过目标时间，将目标时间设置为明天的11:30:00
+      if (d1 >= d2) {
+        targetTime.setDate(targetTime.getDate() + 1);
+        d2 = +targetTime; // 更新目标时间戳
+      }
+
+      // 计算时间差
+      let t = (d2 - d1) / 1000;
+
+      // 其余代码保持不变
+
+      // 倒计时
+      // 时分秒公式
+      let h = parseInt(t / 60 / 60 % 24) + ''
+      let m = parseInt(t / 60 % 60) + ''
+      let s = parseInt(t % 60) + ''
+      // 不足两位补零并显示在页面中
+      lunchHourObj.innerHTML = h.padStart(2 , '0')
+      lunchMinuteObj.innerHTML = m.padStart(2 , '0')
+      lunchSecondObj.innerHTML = s.padStart(2 , '0')
+
+      // 显示当前时间
+      let date = new Date()
+      next.innerHTML = `今天是 ${date.toLocaleDateString()}`
+      tips.innerHTML = `当前时间是 ${date.toLocaleTimeString()}`
+
+      // 时间到了关定时器
+      if(d2 - d1 <= 0) flag2 = true
+    }
+
+    // 开启午休倒计时定时器
+    fn2()  // 开启定时器之前执行一次避免出现空白
+    let lunchTimerId = setInterval(fn2 , 1000)
+    if(flag2) {
+      clearInterval(lunchTimerId)
+      lunchHourObj.innerHTML = '00'
+      lunchMinuteObj.innerHTML = '00'
+      lunchSecondObj.innerHTML = '00'
+    }
+  </script>
+</body>
+
+</html>
