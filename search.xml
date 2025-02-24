@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>脸红</title>
+      <link href="/2025/02/19/%E8%84%B8%E7%BA%A2/"/>
+      <url>/2025/02/19/%E8%84%B8%E7%BA%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="脸红"><a href="#脸红" class="headerlink" title="脸红"></a>脸红</h2><p>&emsp;2.3日 用老舍的话来说就是我见过了胜过世间一切晚霞的美好事物</p><p>&emsp;我想动笔，把这段不远前的记忆记录下来。 有人说：写出最真实的记忆的愿望有多么强烈，受到的各种干扰就有多么大，记忆总是被我的情感改头换面，并随之捉弄我、背叛我，把我搞得头脑混乱，真伪难辨。根本就无法还原真实。</p><p>&emsp;我不想等到想要回忆的时候才去回忆我想就按着现在的这份心情，幸福快乐来描绘那一天。我想很远很远的以后，看到这几段文字，能回想起青涩，不安，强烈的心跳。</p><p>&emsp;“小泰迪我一手拎一个” 看到她发的消息之后我苦笑着放下了手机，“我可是在去接你的路上啊喂，不是说自己是i人吗，哪有马上见面了还要跳起来给我膝盖痛击的i人”我这样想到。 但是这份活泼我一点都不讨厌，不对，不如说这正是吸引我的原因。她啊，小e，能很好很好的接住我所有的情绪。</p><p>&emsp;“我到了，你在哪儿呢”我开启了双闪，把车停到小区门口。下车了没一会</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 碎碎念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我</title>
       <link href="/2025/02/12/%E6%88%91/"/>
       <url>/2025/02/12/%E6%88%91/</url>
@@ -73,293 +98,6 @@
             <tag> 碎碎念 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>时间搜索</title>
-      <link href="/2024/01/23/%E6%97%B6%E9%97%B4%E6%90%9C%E7%B4%A2/"/>
-      <url>/2024/01/23/%E6%97%B6%E9%97%B4%E6%90%9C%E7%B4%A2/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public PageVO&lt;SteamCuringVO&gt; steamCuringList(SteamCuringDTO steamCuringDTO) &#123;</span><br><span class="line"></span><br><span class="line">        Page page = new Page();</span><br><span class="line">        page.setSize(steamCuringDTO.getPageSize());</span><br><span class="line">        page.setCurrent(steamCuringDTO.getPageNum());</span><br><span class="line"></span><br><span class="line">        LambdaQueryWrapper&lt;SteamCuring&gt; wrapper = Wrappers.&lt;SteamCuring&gt;lambdaQuery()</span><br><span class="line">            .like(!ObjectUtils.isEmpty(steamCuringDTO.getOrgCode()), SteamCuring::getOrgCode, steamCuringDTO.getOrgCode())</span><br><span class="line">            .like(!ObjectUtils.isEmpty(steamCuringDTO.getOrgName()), SteamCuring::getOrgName, steamCuringDTO.getOrgName())</span><br><span class="line">            .like(!ObjectUtils.isEmpty(steamCuringDTO.getEquipmentNumber()), SteamCuring::getEquipmentNumber, steamCuringDTO.getEquipmentNumber());</span><br><span class="line"></span><br><span class="line">    // 判断 steamCuringDTO.getInsertTime() 是否为空，为空时不加入条件</span><br><span class="line">        if (!ObjectUtils.isEmpty(steamCuringDTO.getInsertTime())) &#123;</span><br><span class="line"></span><br><span class="line">        // 获取 insertTime，并进行转换</span><br><span class="line">        LocalDateTime insertTime = convertDateToLocalDateTime(steamCuringDTO.getInsertTime());</span><br><span class="line"></span><br><span class="line">        // 计算下一天</span><br><span class="line">        LocalDateTime insertTimeEnd = calculateNextDay(insertTime);</span><br><span class="line"></span><br><span class="line">        wrapper = wrapper.between(</span><br><span class="line">                SteamCuring::getInsertTime,</span><br><span class="line">                insertTime,</span><br><span class="line">                insertTimeEnd</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/12/18/lambda/"/>
-      <url>/2023/12/18/lambda/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://gitee.com/Eouu/pic/raw/master/img/20210518172357678.png" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>sql</title>
-      <link href="/2023/10/16/sql/"/>
-      <url>/2023/10/16/sql/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;fileList&quot; resultType=&quot;com.zjjg.law.common.vo.RtFileListVO&quot;&gt;</span><br><span class="line">        SELECT id, file_no, type, business_date</span><br><span class="line">        FROM (</span><br><span class="line">        SELECT fb.id, fb.file_no, fb.type, fd.business_date</span><br><span class="line">        FROM file_base fb</span><br><span class="line">        LEFT JOIN file_detail fd ON fb.id = fd.file_base_id</span><br><span class="line">        UNION</span><br><span class="line">        SELECT nld.id, nld.non_litigation_no, nld.type, NULL as business_date</span><br><span class="line">        FROM non_litigation_detail nld</span><br><span class="line">        ) AS combined</span><br><span class="line">        &lt;where&gt;</span><br><span class="line">            &lt;if test=&quot;query.type != null and query.type != &#x27;&#x27;&quot;&gt;</span><br><span class="line">                AND (type LIKE CONCAT(&#x27;%&#x27;, #&#123;query.type&#125;, &#x27;%&#x27;))</span><br><span class="line">            &lt;/if&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/where&gt;</span><br><span class="line">    &lt;/select&gt;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> sql </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> sql </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>枚举</title>
-      <link href="/2023/09/23/%E6%9E%9A%E4%B8%BE/"/>
-      <url>/2023/09/23/%E6%9E%9A%E4%B8%BE/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">public enum CompanyEnum &#123;</span><br><span class="line"></span><br><span class="line">    COMPANY_0(&quot;浙江交工集团股份有限公司&quot;, &quot;浙江交工&quot;, &quot;0&quot;),</span><br><span class="line">    COMPANY_1(&quot;浙江交工路桥建设有限公司&quot;, &quot;交工路建&quot;, &quot;1&quot;),</span><br><span class="line">    COMPANY_2(&quot;浙江交工集团股份有限公司第一分公司&quot;, &quot;一分公司&quot;, &quot;2&quot;),</span><br><span class="line">    COMPANY_3(&quot;西藏浙交路桥建设有限公司&quot;, &quot;西藏浙交公司&quot;, &quot;3&quot;),</span><br><span class="line">    COMPANY_4(&quot;浙江交工集团股份有限公司大桥分公司&quot;, &quot;大桥分公司&quot;, &quot;4&quot;),</span><br><span class="line">    COMPANY_5(&quot;浙江交工装备工程有限公司&quot;, &quot;装备工程公司&quot;, &quot;5&quot;),</span><br><span class="line">    COMPANY_6(&quot;浙江交工集团股份有限公司舟山建筑工业化分公司&quot;, &quot;舟山建筑工业化分公司&quot;, &quot;6&quot;),</span><br><span class="line">    COMPANY_7(&quot;浙江交工国际工程有限公司&quot;, &quot;交工国际&quot;, &quot;7&quot;),</span><br><span class="line">    COMPANY_8(&quot;浙江交工集团股份有限公司海外分公司&quot;, &quot;海外分公司&quot;, &quot;8&quot;),</span><br><span class="line">    COMPANY_9(&quot;浙江交工宏途交通建设有限公司&quot;, &quot;交工宏途&quot;, &quot;9&quot;),</span><br><span class="line">    COMPANY_10(&quot;浙江交工集团股份有限公司第四分公司&quot;, &quot;四分公司&quot;, &quot;10&quot;),</span><br><span class="line">    COMPANY_11(&quot;浙江交工金筑交通建设有限公司&quot;, &quot;交工金筑&quot;, &quot;11&quot;),</span><br><span class="line">    COMPANY_12(&quot;浙江交工集团股份有限公司第五分公司&quot;, &quot;五分公司&quot;, &quot;12&quot;),</span><br><span class="line">    COMPANY_13(&quot;浙江交工集团股份有限公司地下工程分公司&quot;, &quot;地下分公司&quot;, &quot;13&quot;),</span><br><span class="line">    COMPANY_14(&quot;浙江交工地下工程有限公司&quot;, &quot;地下工程公司&quot;, &quot;14&quot;),</span><br><span class="line">    COMPANY_15(&quot;浙江交工集团股份有限公司设计院分公司&quot;, &quot;设计分公司&quot;, &quot;15&quot;),</span><br><span class="line">    COMPANY_16(&quot;浙江交工交通科技发展有限公司&quot;, &quot;科技公司&quot;, &quot;16&quot;),</span><br><span class="line">    COMPANY_17(&quot;浙江交工集团股份有限公司投资总承包事业部&quot;, &quot;投资总承包事业部&quot;, &quot;17&quot;),</span><br><span class="line">    COMPANY_18(&quot;浙江港通交通投资开发有限公司&quot;, &quot;港通公司&quot;, &quot;18&quot;),</span><br><span class="line">    COMPANY_19(&quot;浙江交工集团股份有限公司铁路分公司&quot;, &quot;铁路分公司&quot;, &quot;19&quot;),</span><br><span class="line">    COMPANY_20(&quot;浙江交工集团股份有限公司港航工程分公司&quot;, &quot;港航分公司&quot;, &quot;20&quot;),</span><br><span class="line">    COMPANY_21(&quot;浙江交工集团股份有限公司建筑工业化事业部&quot;, &quot;建筑工业化事业部&quot;, &quot;21&quot;),</span><br><span class="line">    COMPANY_22(&quot;浙江交科供应链管理有限公司&quot;, &quot;供应链公司&quot;, &quot;22&quot;),</span><br><span class="line">    COMPANY_23(&quot;浙江交工集团股份有限公司路面工程分公司&quot;, &quot;路面分公司&quot;, &quot;23&quot;),</span><br><span class="line">    COMPANY_24(&quot;杭绍甬事业部&quot;, &quot;杭绍甬事业部&quot;, &quot;24&quot;),</span><br><span class="line">    COMPANY_25(&quot;绍兴柯桥杭金衢联络线高速公路有限公司&quot;, &quot;绍兴柯桥杭金衢联络线高速公路有限公司&quot;, &quot;25&quot;),</span><br><span class="line">    COMPANY_26(&quot;浙江交工集团股份有限公司西南分公司&quot;, &quot;西南分公司&quot;, &quot;26&quot;),</span><br><span class="line">    COMPANY_27(&quot;浙江交工集团股份有限公司福建分公司&quot;, &quot;福建分公司&quot;, &quot;27&quot;);</span><br><span class="line"></span><br><span class="line">    private final String fullName;</span><br><span class="line">    private final String shortName;</span><br><span class="line">    private final String id;</span><br><span class="line"></span><br><span class="line">    CompanyEnum(String fullName, String shortName, String id) &#123;</span><br><span class="line">        this.fullName = fullName;</span><br><span class="line">        this.shortName = shortName;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getFullName() &#123;</span><br><span class="line">        return fullName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getShortName() &#123;</span><br><span class="line">        return shortName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static CompanyEnum getEnumByFullName(String code)&#123;</span><br><span class="line">        if(code ==null)&#123;</span><br><span class="line">            throw new ServiceException(&quot;无效信息&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        for (CompanyEnum o : CompanyEnum.values()) &#123;</span><br><span class="line">            if (code.equals(o.getFullName())) &#123;</span><br><span class="line">                return o;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new ServiceException(&quot;无效信息&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>LocalDateTime</title>
-      <link href="/2023/09/19/LocalDateTime/"/>
-      <url>/2023/09/19/LocalDateTime/</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@JsonFormat(shape = JsonFormat.Shape.STRING, pattern=&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br><span class="line">@JsonRawValue</span><br><span class="line">注解能够按原样序列化属性。属性值不会被转义或者加引号（或者说，会自动去掉转义，多余的引号）。属性值已经是一个 JSON String，或者属性值已经被加了引号时很有用。</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Transactional(rollbackFor=Exception.class)</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Long&gt; collect = freezeList.stream()</span><br><span class="line">                    .collect(Collectors.groupingBy(Freeze::getCaseNo, Collectors.counting()));</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">   public List&lt;ListByFileIdVO&gt; listByFileId(ListByFileIdReq req) &#123;</span><br><span class="line"></span><br><span class="line">       // 获取req中的id</span><br><span class="line">       String id = req.getId();</span><br><span class="line"></span><br><span class="line">       LambdaQueryWrapper&lt;Freeze&gt; lambdaQueryWrapper = new LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">       lambdaQueryWrapper.eq(Freeze::getCaseNo, id);</span><br><span class="line"></span><br><span class="line">       List&lt;Freeze&gt; resultList = iFreezeService.list(lambdaQueryWrapper);</span><br><span class="line"></span><br><span class="line">       List&lt;ListByFileIdVO&gt; filteredData = resultList.stream()</span><br><span class="line">               .map(data -&gt; &#123;</span><br><span class="line">                   ListByFileIdVO vo = FreezeConverter.INSTANCE.entity22VO(data);</span><br><span class="line"></span><br><span class="line">                   return vo;</span><br><span class="line">               &#125;)</span><br><span class="line">               .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">       return filteredData;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Tree&gt; resultList = iTreeService.list(treeLambdaQueryWrapper);</span><br><span class="line"></span><br><span class="line">       // 使用 Stream API 提取 nodes 列表</span><br><span class="line">       List&lt;Integer&gt; nodes = resultList.stream()</span><br><span class="line">               .map(Tree::getSort)</span><br><span class="line">               .filter(sort -&gt; sort &gt; Integer.parseInt(node))</span><br><span class="line">               .collect(Collectors.toList());</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 从数据库中获取文件详情列表</span><br><span class="line">List&lt;FileDetail&gt; fileDetailList = fileDetailMapper.selectList(detailQueryWrapper);</span><br><span class="line"></span><br><span class="line">// 检查文件详情列表是否为空</span><br><span class="line">if (!fileDetailList.isEmpty()) &#123;</span><br><span class="line">    // 找到具有最大节点值的FileDetail记录</span><br><span class="line">    FileDetail fileDetail = fileDetailList.stream()</span><br><span class="line">            .max(Comparator.comparing(fd -&gt; fd.getNode()))</span><br><span class="line">            .orElse(null);</span><br><span class="line"></span><br><span class="line">    // 如果找到了具有最大节点值的FileDetail记录</span><br><span class="line">    if (fileDetail != null) &#123;</span><br><span class="line">        // 将该记录的业务日期（businessDate）设置给fileListVO对象</span><br><span class="line">        fileListVO.setBusinessDate(fileDetail.getBusinessDate());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for (String freezeId : freezeIds) &#123;</span><br><span class="line">           Freeze freeze = new Freeze();</span><br><span class="line">           freeze.setId(Integer.parseInt(freezeId));</span><br><span class="line">           // 将 ID 转换为字符串</span><br><span class="line">           freeze.setCaseNo(fileBaseId.toString());</span><br><span class="line">           // 实现此服务方法以更新 Freeze 实体</span><br><span class="line">           iFreezeService.updateFreezeInfo(freeze);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (!ObjectUtil.isEmpty(fileDetail.getCorrelation())) &#123;</span><br><span class="line">           String correlation = fileDetail.getCorrelation();</span><br><span class="line">           String formattedCorrelation = correlation.replace(&quot;\n&quot;, &quot;\\n&quot;);</span><br><span class="line">           fileDetail1.setCorrelation(formattedCorrelation);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/09/12/%E5%85%A5%E8%81%8C%E6%8A%A5%E5%91%8A/"/>
-      <url>/2023/09/12/%E5%85%A5%E8%81%8C%E6%8A%A5%E5%91%8A/</url>
-      
-        <content type="html"><![CDATA[<p>开发流程图</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905093544971.png" alt="image-20230905093544971"></p><p>这是我现在的开发思路</p><p>​进来学习的两个月学到的东西比我以前实习的多得多。</p><p>​从一开始的，简单的list，就是查询数据库返回表数据。到后来的调用自己的方法，对接外部接口，学会了很多。</p><p>​最主要的代码定位能力，是稳步增长的。</p><p>​2.对接外部接口的时候，根据第三方接口返回的json，使用GsonFormatPlus插件吧返回的json转换成req对象，通过返回的数据，或者一开始看json的层级来给req分层</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905094554845.png" alt="image-20230905094554845"></p><p>​3.对接的时候，通过这个层级，创建vo对象的层级，比如最外层的</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905094803127.png" alt="image-20230905094803127"></p><p>然后再包一层page</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905094836935.png" alt="image-20230905094836935"></p><p>这就是vo的层级，使用的时候嵌套</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905094914104.png" alt="image-20230905094914104"></p><p>这样就能更好的前后端联调，根据前端需要的格式给予前端</p><p>​4.在这两个月中，遇到最大的困难就是对接第三方的接口。因为以前没有接触过第三方的接口，所以做起来一头雾水，后来设计了自己的第三方对接规范。因为对接的接口需要key跟Secret，所以我再yml里配置了：</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905095510136.png" alt="image-20230905095510136"></p><p>hosturl跟下面的api拼接，就是需要get的接口，因此创建了一个send通用方法，</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905095740283.png" alt="image-20230905095740283"></p><p>使用的时候，就是改变Enum后面的参数就可以了，Enum枚举中有四个跟yml配置名字一样的枚举</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905095836850.png" alt="image-20230905095836850"></p><p>再这个通用的对接第三方接口的方法里，</p><p>先创建了一个map，吧需要请求的参数加进map</p><p>HttpGetUtil.httpGet方法，可以指定GET请求的URL、查询参数和标头，这个方法可以变成对接第三方接口通用的方法。</p><p>完成了第一步，调用第三方接口，接收到json，然后需要解析保存</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905101007078.png" alt="image-20230905101007078"></p><p>​5.还用了很多的lambda表达式，可以替换掉xml里的语句，比如说上面图的lambda表达式。对拿到的数据比较，排除掉已存在于数据库中的公司名称。</p><p>​6.在lambda表达式中，用到了一个转换方法</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905101405025.png" alt="image-20230905101405025"></p><p>​这个转换方法非常的好用，是陈言哥教我的，这里面基本的使用方法</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905101522624.png" alt="image-20230905101522624"></p><p>其中mappings如果字段都是一致的就不需要进行转换，req跟实体类的转换。</p><p>也有其他的情况，比如说层级不一样，是被包裹住的，所以就得指定路径</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905101659695.png" alt="image-20230905101659695"></p><p>或者是这样的</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905101716150.png" alt="image-20230905101716150"></p><p>更多的时候还是req跟实体类不一致的时候才用，最常见的就是，在物联网网关里面，根据项目部提供的字段创建的接口，传过来的字段名跟数据库存的不一致：</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905101953730.png" alt="image-20230905101953730"></p><p>​7.在技术方面，学到了很多的规范</p><p>比如：吧实体类、mapper、service都包在core里，这个文件夹对应的更多就是对于数据库的操作，跟core同级的service文件夹，才是业务的逻辑</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905102354680.png" alt="image-20230905102354680"></p><p>​8.学习定时任务语法</p><p>​9.技术方面经过这2个月，眼界也变开阔了，一开始的每天拉第三方接口的数据，没有进行更新或者其他操作，导致我负责的模块出现了很多错误，后来经过思考以及请教，对于类似的问题也有相对的经验，比如machine模块定时任务，这个第三方接口每天四点会更新那一天所有的数据，所以就决定今天的凌晨，清除掉昨天的数据，然后再跑今天的定时任务。这个简单的逻辑修修改改了一个星期，最后是这样的：</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905103347103.png" alt="image-20230905103347103"></p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905103357229.png" alt="image-20230905103357229"></p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905103403477.png" alt="image-20230905103403477"></p><p>​10.定时任务里，也添加了预警的通用方法，在跑这些定时任务失败的时候，通过sendNotification通用方法，也是通过定义yml里的配置，以及枚举类</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905103614428.png" alt="image-20230905103614428"></p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905103623461.png" alt="image-20230905103623461"></p><p>来实现发送预警方法，其中包括钉钉、邮件以及短信。</p><p>但是这里又跟上面不一样，这个的配置属于是用户户名跟密码，跟数据库的比，更上面传参不一样。</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905104421024.png" alt="image-20230905104421024"></p><p>对于这个数据库的理解也加深了</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905104450890.png" alt="image-20230905104450890"></p><p>nt_basic_registry是主表，basic_id字段里面的值就是对应子表的id，通过字段里包含的属性，来配置发送钉钉、邮件或者短信</p><p>11.消息中台项目集成了邮件以及短信推送，短信推送的代码是在对外服务的项目里copy过来的把他改成了可配置的方法</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905105033704.png" alt="image-20230905105033704"></p><p>消息中台创建数据库的时候，这是当时的逻辑</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905105647165.png" alt="image-20230905105647165"></p><p>12.工具的使用</p><p>knife4j文档</p><p>代码生成器</p><p>nacos服务配置：<img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905110041923.png" alt="image-20230905110041923"></p><p>Docker操作界面Portainer：</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905110303664.png" alt="image-20230905110303664"></p><p>代码部署jenkins：</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905110339348.png" alt="image-20230905110339348"></p><p>idea工具:</p><p><img src="https://gitee.com/Eouu/pic/raw/master/img/image-20230905173221314.png" alt="image-20230905173221314"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/09/12/reqVO/"/>
-      <url>/2023/09/12/reqVO/</url>
-      
-        <content type="html"><![CDATA[<p>req是拿到</p><p>vo是给</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/09/12/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4%EF%BC%8C%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C%20---%20%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD/"/>
-      <url>/2023/09/12/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4%EF%BC%8C%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C%20---%20%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD/</url>
-      
-        <content type="html"><![CDATA[<p>日本排放核废水，中国没必要这么恐慌 — 一个生物狗的科普小园</p><p>日本宣布福岛核电站将在8月24日开始排放经过处理的核废水。近几年，福岛排放核废水一事在中国引起了广泛关注。最近清华大学深圳研究生院一项研究说福岛排放核废水，放射性物质240天会到中国沿海。面对这各种“危险”，民众有必要恐慌吗？即将进入太平洋的核废水，是否真的会对我们产生威胁，太平洋的海鲜是否真会受到核污染？</p><ol><li>核废水从哪里来？为什么要排放？</li></ol><p>讨论福岛核废水排放是否科学，是否会对周围环境造成威胁前，我们需要先退一步，问一个基本问题：福岛为什么要排放核废水？很多关于核废水的谣言都是在这一基本问题上就开始恐吓性宣传，说得好像日本没事干就想搞核污染一样。可这符合逻辑吗？福岛在日本境内，日本还是消费海产品非常多的国家，尤其喜欢本国的水产，他们会故意在自己境内搞污染吗？</p><p>其实如今的福岛核废水排放是整个福岛核电站清理计划的一部分。2011年3月，由于地震引发的海啸，福岛核电站发生了严重事故，6个核反应堆中1-3号发生熔芯，4号受损。在这之后，日本就进入了控制、清理福岛核电站的过程。要下线一个核电站涉及清理大量的核燃料，是一个漫长的过程，而对于福岛这种发生了严重核泄漏事故的核电站，因为要清理破损的核反应堆、周围被污染的土壤等，就更为复杂。目前预计整个福岛核电站需要30-40年才能完成下线。</p><p>而在清理福岛核电站的过程中，从事故一开始给核反应堆降温，到之后让核反应堆维持冷却状态，都要不断向反应堆注入冷却水。这些冷却水在该过程中会被污染，成为具有极高放射性的核污水。冷却水也无法100%循环，即核电站清理人员会不断输入新的冷却水，而旧的污水会不断累积。福岛核电站在核事故过程中遭受的破坏还意味着存在雨水、地下水渗入核反应堆，形成冷却水之外的污水。</p><p>这些具有放射性的核污水在福岛核电站彻底下线之前会不断积累。当然，积累的速度会有变化。例如雨水、地下水渗透存在于早期，后来通过隔断地下水等措施已经解决，而核事故发生后的初期，冷却水的用量更大，循环利用比例更低，这些因素综合在一起，让现在福岛污水累积速率已经大幅下降。</p><p>可无论如何，这些受污染的水总要找个处理办法。福岛核电站的经营管理方——东京电力公司，东电，在事故发生后不久就开始在福岛核电站区域内划出一块地方，持续修建储水罐，用于暂时存放不断积累的污水。</p><p>不过这种存储只是暂时的，因为福岛当地的空间有限，能修建的储水罐也有限。到2020年底时储水罐已经修到了上限，总容积是137万立方米，可当时已经用掉的容积达到了123万立方，加上每年继续新增5-6万方废水，就需要部署更长期的解决方案。</p><p>而如今的排放入海也是建立在这一大背景之下。</p><p>\2. 核污水，核废水，ALPS处理水，谁更准确？</p><p>因核泄漏污染的雨水、地下水，以及冷却核反应堆形成的污染水，这些普遍具有较高放射性的污水收集在一起，就成了福岛需要想办法处理掉的核废水。</p><p>核废水的总量与存储空间的矛盾在福岛核事故不久后就暴发过。2011年4月与5月，冷却刚发生事故的核反应堆迅速产生了大量污水，而当时福岛核电站也建成的存储空间有限，于是东电选择将所有污水里放射性相对低一些的直接排海，4月排放11.5万吨，5月排放30万吨。这在当时引发了很大争议，一方面是因为东电彼时未事先沟通污水累积情况，直接宣布排海。另一方面是尽管选择了放射性低的污水排放，但被排放的污水放射性仍然超过国际放射性物质的排放标准。</p><p>2011年的排放也是如今很多媒体、自媒体报道强调核污水，而非核废水的来源。那些污水里存在铯137，碘131等放射性物质，它们也被很多报道沿用到了当下的核废水排放讨论中。</p><p><strong>只是这些强调必须叫核污水的报道对当下的排放实情存在误导，至于存在铯137、碘131等各种危险放射性物质的说法更属于不实信息。</strong></p><p>与核反应堆直接接触后，无论来源是冷却水、雨水还是地下水，确实都形成了被污染过的水，称为核污水是合理的，也是东电2011年时排放入海的类型。<strong>可如今福岛不是将此类核污水直接排放，而是将核污水处理，做到符合国际排放标准后，再排放。</strong>这类符合排放标准，但仍具有一定放射性的处理水，应该属于核废水，而不是核污水。</p><p>要理解当下的核废水与最初产生的核污水的区别，必须提到ALPS系统。由于清理核事故必然产生大量核污水，如何安全处置这些污水早就成了东电以及日本政府考虑的事宜。2013年时，东芝专门就此开发了一个多种放射性物质移除系统，ALPS。</p><p>ALPS可以理解为一个过滤系统，在实际操作过程中，存储下来的核污水进入ALPS处理，通过吸附、过滤的方式，移除62种放射性元素（使其含量大幅降低），形成ALPS处理水。</p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-73xlgihcp2kb1.jpg?width=640&format=pjpg&auto=webp&s=6b2b7b1d08979215de7bc2fb5f76e033da6a0dcd" alt="r/China_irl -  ALPS系统工作原理图 "></p><p>从2013年ALPS上线后，福岛核电站一直在用ALPS处理累积下来的核污水，处理后的ALPS处理水则继续存在前文提到的储水罐里，如今要排放的其实就是ALPS处理水。</p><p>一些报道里刻意渲染的铯137、碘131也都是会被ALPS移除的放射性元素。因此强调这些放射性物质会被排放，只能说属于不实信息。</p><p>\3. 核废水的排放标准</p><p>相对于用什么系统清除核污水里的放射性元素，公众更关心的是最后要排放的核废水到底还有多少放射性。像一些新闻报道会说ALPS系统处理并不成功，有很多污水经过处理后仍然有很高的放射性。</p><p>对这些说法，我们就需要了解福岛核废水排放的标准。<strong>福岛核废水排放不是在ALPS系统里打个卡就排放的，而是有明确的放射性物质排放标准，ALPS的目的是让排放的废水达到这个标准。</strong></p><p>ALPS能移除62种放射性元素，不过有两个移除不了，那就是碳14和氢的同位素氚。核废水中碳14的含量本身就不高，大概是日本排放标准的十分之一。真正ALPS处理不了又在总辐射量上比较显著的是氚。</p><p>对此，最后确立的排放标准是氚之外，利用ALPS处理把剩下的放射性元素总放射量，低于放射性废物的环境排放标准（总数值为1，也是国际放射防护委员会ICRP认可的标准）。2020年底时，福岛储存的核废水中有29%达到该标准。</p><p>那么剩下没达标的呢？像一些媒体报道非常乐于强调70%的核废水不达标。可这些不达标的不会被排放，而是会再度经过ALPS处理，直到达标后才会进入排放的序列。</p><p>那些未代表的废水包括早期处理的，以及有段时间遇到过滤系统故障的，那些放射性元素含量高很多（分别为10-100与100以上）。但它们都会再次经过ALPS，即再次移除放射性物质。根据东电监测报告，之前放射性元素量含量2400以上的的水，再度处理后只有0.35。也就是说这种反复用ALPS处理来达标是可行的。</p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-k1pttk4sp2kb1.jpg?width=640&format=pjpg&auto=webp&s=9206d5d25fc14275823805d309bc9eca88b23327" alt="r/China_irl -  再度ALPS处理可让废水达标 "></p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-k1pttk4sp2kb1.jpg?width=640&format=pjpg&auto=webp&s=9206d5d25fc14275823805d309bc9eca88b23327" alt="r/China_irl -  再度ALPS处理可让废水达标 "></p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-t9lq96q6q2kb1.jpg?width=640&format=pjpg&auto=webp&s=ac6acf00f6774c4b60d855eb5f7b33f5668f71f3" alt="r/China_irl -  全球部分核电站每年氚水排放量 "></p><p>中国大陆两座核电站福清与三门，2020年分别向台湾海峡与东海排放了52与20 TBq的液态氚。<strong>2020年的太平洋容得下中国两座核电站排放的72 tbq以及韩国向日本海排放的211 TBq，相信2023年的太平洋应该不至于缩小到害怕福岛每年增加的22 TBq。</strong></p><p>这样的排放量对周围环境能造成多大影响呢？</p><p>日本根据联合国原子辐射效应科学委员会设计的方法，测算现在福岛计划排放处理后的核废水，对日本本国每个人的影响不超过自然背景辐射的十万分之一（距离排放点最近的日本是受影响最大的地方）。作为对比，吃一根香蕉获得的辐射量约为每年自然背景的两万分之一，是福岛核废水排放对日本当地居民影响的五倍。这种影响，IAEA认为可以忽略，是科学合理的。</p><p>我们再来看很多人担心的海洋被污染，海鲜不安全问题。需要注意排放的核废水会先用海水稀释100倍，在低于WHO饮用水的氚含量标准后入海。对海洋的影响实际也是在可忽略不计的范围。根据模拟，废水排放时只有福岛排放点周围2公里以内海域的氚含量会超过海水背景1 Bq&#x2F;L，而且会在1-10 Bq&#x2F;L的范围内，远低于WHO饮用水标准。即便一些国家采用更严格的标准，如挪威，饮用水标准也是100 Bq&#x2F;L。</p><p>综合这些信息，福岛“核废水”在排放时含“核”量已经很低，且对环境整体影响也不会在全球现有核电站的基础上有明显增加。甚至就是福岛周围海域，也不会因核废水排放带来显著的放射性污染，影响海鲜安全性更属于无稽之谈。</p><p>不过，很多人还是会被一些可以渲染核废水威胁的报道搞晕，觉得这些影响评估都是建立在氚的影响上。像一些人会强调这是核污水，不是核废水，里面有很多其它放射性物质。</p><p>其实前文也说过了，别的放射性物质经过ALPS已经移除到很少，不会有显著影响。我们最后还是来看一下IAEA组织的全球多个实验室对比检测ALPS处理水中放射性物质含量的结果。参与该对比检测的既有IAEA的实验室，也有瑞士的实验室，还有对废水排放同样极为关注的韩国实验室。</p><p>该结果在2023年5月30日公布，也在IAEA网站上公开，确认了东电的检测可靠，显示除氚超标外，ALPS处理过的废水，其余放射性元素含量都极低：除氚外（第一行的3H），其它放射性元素的量都很低，也远远低于排放标准（Regulatory limit）。</p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-fdrxu9yaq2kb1.jpg?width=626&format=pjpg&auto=webp&s=9691daadfcc86149034c613d49d79631793c7d8b" alt="r/China_irl -  ALPS处理水中各种放射性元素含量 "></p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-fdrxu9yaq2kb1.jpg?width=626&format=pjpg&auto=webp&s=9691daadfcc86149034c613d49d79631793c7d8b" alt="r/China_irl -  ALPS处理水中各种放射性元素含量 "></p><p><img src="https://preview.redd.it/%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4-%E4%B8%AD%E5%9B%BD%E6%B2%A1%E5%BF%85%E8%A6%81%E8%BF%99%E4%B9%88%E6%81%90%E6%85%8C-%E4%B8%80%E4%B8%AA%E7%94%9F%E7%89%A9%E7%8B%97%E7%9A%84%E7%A7%91%E6%99%AE%E5%B0%8F%E5%9B%AD-v0-uyj0nyx7s2kb1.jpg?width=1024&format=pjpg&auto=webp&s=9ede2909257787726ae8d88a853316d9a67dfa35" alt="r/China_irl - 日本排放核废水，中国没必要这么恐慌 --- 一个生物狗的科普小园"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Scheduled定时任务</title>
-      <link href="/2023/08/14/Scheduled%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-      <url>/2023/08/14/Scheduled%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
-      
-        <content type="html"><![CDATA[<p>每5分钟执行一次</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Scheduled(cron = &quot;0 0/5 * * * ?&quot;)</span><br></pre></td></tr></table></figure><p>每一小时执行一次</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Scheduled(cron = &quot;0 0 * * * ?&quot;)</span><br></pre></td></tr></table></figure><p>每一天执行一次</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Scheduled(cron = &quot;0 0 0 * * ?&quot;)</span><br></pre></td></tr></table></figure><p>0&#x2F;2 * * * * ?   表示每2秒 执行任务（数值不能超过60，如超过好像会按最大上限执行每60秒执行一次，即最多每60秒执行一次，错误表达0&#x2F;120 * * * * ?，并不会每120秒，执行一次，如需要请转化为分钟，数值不能超过60，因为60秒的话，就可以转化成1分钟了，所以它最大就只能是60）</p><p>0 0&#x2F;2 * * * ?    表示每2分钟 （数值不能超过60，因为60分钟的话，就可以转化成小时了，所以它最大就只能是60）</p><p>0 0 0&#x2F;2 * * ?    表示每2小时 执行任务（数值不能超过24，因为24小时的话，就可以转化成一天了，所以它最大只能是24）</p><p>也就是说，如果超过60秒，它就要你转化1分钟。</p><p>​         如果超过60分钟，它就要你转化1小时。</p><p>​         如果超过24小时，它就要你转化1天了。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">说明：</span><br><span class="line">Java(Quartz)</span><br><span class="line">*    *    *    *    *    *    *</span><br><span class="line">-    -    -    -    -    -    -</span><br><span class="line">|    |    |    |    |    |    |</span><br><span class="line">|    |    |    |    |    |    + year [optional]</span><br><span class="line">|    |    |    |    |    +----- day of week (1 - 7) sun,mon,tue,wed,thu,fri,sat</span><br><span class="line">|    |    |    |    +---------- month (1 - 12) OR jan,feb,mar,apr ...</span><br><span class="line">|    |    |    +--------------- day of month (1 - 31)</span><br><span class="line">|    |    +-------------------- hour (0 - 23)</span><br><span class="line">|    +------------------------- min (0 - 59)</span><br><span class="line">+------------------------------ second (0 - 59)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>java.lang.String</title>
-      <link href="/2023/08/02/java-lang-String/"/>
-      <url>/2023/08/02/java-lang-String/</url>
-      
-        <content type="html"><![CDATA[<h1 id="1、错误日志"><a href="#1、错误日志" class="headerlink" title="1、错误日志"></a>1、错误日志</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;nested exception is org.apache.ibatis.exceptions.PersistenceException: \n### Error querying database. Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String\n### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String&quot;</span></span><br></pre></td></tr></table></figure><h1 id="2、分析原因解决"><a href="#2、分析原因解决" class="headerlink" title="2、分析原因解决"></a>2、分析原因解决</h1><p><strong>找到mybatis的xml文件，发现只有这两个字段是日期类型，仔细想了一下，那八成就是日期类型Date不能进行字符串<code>Date != &quot;&quot;</code>判断，只进行<code>Date != null</code>判断即可！</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test=&quot;query.dataTime != null and query.dataTime != &#x27;&#x27;&quot;&gt;</span><br><span class="line">               AND TO_DAYS(`time`) = TO_DAYS(#&#123;query.dataTime&#125;)</span><br></pre></td></tr></table></figure><p><strong>只需改成如下</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;if test=&quot;query.time != null &quot;&gt;</span><br><span class="line">                AND TO_DAYS(`time`) = TO_DAYS(#&#123;query.time&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 报错 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 报错 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>mybatis</title>
-      <link href="/2023/08/02/mybatis/"/>
-      <url>/2023/08/02/mybatis/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://gitee.com/Eouu/pic/raw/master/img/20171128191813054" alt="img"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> mybatis </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> mybatis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>解决hexo引入图床，手机和web不显示图片的问题</title>
-      <link href="/2023/07/28/%E8%A7%A3%E5%86%B3hexo%E5%BC%95%E5%85%A5%E5%9B%BE%E5%BA%8A%EF%BC%8C%E6%89%8B%E6%9C%BA%E5%92%8Cweb%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-      <url>/2023/07/28/%E8%A7%A3%E5%86%B3hexo%E5%BC%95%E5%85%A5%E5%9B%BE%E5%BA%8A%EF%BC%8C%E6%89%8B%E6%9C%BA%E5%92%8Cweb%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<h2 id="解决hexo引入图床，手机和web不显示图片的问题"><a href="#解决hexo引入图床，手机和web不显示图片的问题" class="headerlink" title="解决hexo引入图床，手机和web不显示图片的问题"></a>解决hexo引入图床，手机和web不显示图片的问题</h2><p>1.问题描述<br>Hexo使用图床的方式加载在blog中加载图片，会在非本人的电脑或者手机端报“html访问图片资源403问题(http referrer)”，导致采用图床方式加载的图片全部无法加载。</p><p>2.问题原因<br>http请求体的header中有一个referrer字段，用来表示发起http请求的源地址信息，这个referrer信息是可以省略但是不可修改的，就是说你只能设置是否带上这个referrer信息，不能定制referrer里面的值。</p><p>服务器端在拿到这个referrer值后就可以进行相关的处理，比如图片资源，可以通过referrer值判断请求是否来自本站，若不是则返回403或者重定向返回其他信息，从而实现图片的防盗链。上面出现403就是因为，请求的是别人服务器上的资源，但把自己的referrer信息带过去了，被对方服务器拦截返回了403。</p><p>在前端可以通过meta来设置referrer policy(来源策略)，具体可以设置哪些值以及对应的结果参考这里。所以针对上面的403情况的解决方法，就是把referrer设置成no-referrer，这样发送请求不会带上referrer信息，对方服务器也就无法拦截了。</p><p>浏览器中referrer默认的值是no-referrer-when-downgrade，就是除了降级请求的情况以外都会带上referrer信息。降级请求是指https协议的地址去请求http协议，所以上面403的情况还有另一种解决方法就是，请求的图片地址换成http协议，自己的地址使用http协议，这样降级请求也不会带上referrer。</p><p>3.解决办法<br>3.1 butterfly主题<br>在G:\blog\themes\butterfly\layout\includes目录下有一个head.pug文件，修改该文件的meta信息，会使生成的所有页面都带有该head。在head.pug文件中添加如下内容，结果参见图片。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meta(name=&quot;referrer&quot; content=&quot;no-referrer&quot;)</span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/Eouu/pic/raw/master/img/13838098-1b07689b2e132b5d.png" alt="img"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo报错 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>failed解决方式</title>
-      <link href="/2023/07/27/failed%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/"/>
-      <url>/2023/07/27/failed%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/</url>
-      
-        <content type="html"><![CDATA[<p>hexo d命令之后报错</p><p><img src="https://gitee.com/Eouu/pic/raw/master/blogimg/image-20230727163613542.png" alt="image-20230727163613542"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">nothing to commit, working tree clean</span><br><span class="line">fatal: unable to access &#x27;https://github.com/ECHOrigin/ECHOrigin.github.io.git/&#x27;: Failed to connect to github.com port 443 after 21067 ms: Couldn&#x27;t connect to server</span><br><span class="line">FATAL Something&#x27;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Spawn failed</span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (D:\myblog\myblog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">    at ChildProcess.emit (node:events:513:28)</span><br><span class="line">    at cp.emit (D:\myblog\myblog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">    at ChildProcess._handle.onexit (node:internal/child_process:291:12)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>解决方法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">##进入站点根目录</span><br><span class="line">cd D:\myblog\myblog</span><br><span class="line"></span><br><span class="line">##删除git提交内容文件夹</span><br><span class="line">rimraf .deploy_git/</span><br><span class="line"></span><br><span class="line">##执行</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line"></span><br><span class="line">##最后</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> hexo </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>simple-crud代码生成器</title>
-      <link href="/2023/07/24/Mybatis%20Plus%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8AutoGenerator%EF%BC%8C%E6%9B%B4%E7%AE%80%E5%8D%95%E6%9B%B4%E9%AB%98%E6%95%88%EF%BC%81%20-%20%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%20(bilibili/"/>
-      <url>/2023/07/24/Mybatis%20Plus%E6%9C%80%E6%96%B0%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8AutoGenerator%EF%BC%8C%E6%9B%B4%E7%AE%80%E5%8D%95%E6%9B%B4%E9%AB%98%E6%95%88%EF%BC%81%20-%20%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%20(bilibili/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://www.bilibili.com/read/cv22171769/">Mybatis Plus最新代码生成器AutoGenerator，更简单更高效！ - 哔哩哔哩 (bilibili.com)</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>idea的translation插件问题</title>
-      <link href="/2023/07/24/idea%E7%9A%84translation%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
-      <url>/2023/07/24/idea%E7%9A%84translation%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<p> 下载玩之后我们可能会出现Google翻译不能使用的现象，是因为Google在前几周关闭了国内的服务 这个时候我们去  <strong>C:\Windows\System32\drivers\etc</strong>  找到我们的 <strong>hosts</strong> 文件 在最下面添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">203.208.40.66 translate.google.com</span><br><span class="line"></span><br><span class="line">203.208.40.66 translate.googleapis.com</span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/Eouu/pic/raw/master/image-20230720090252582.png" alt="image-20230720090252582"></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>git问题 error remote origin already exists</title>
-      <link href="/2023/07/24/git%E9%97%AE%E9%A2%98%20error%20remote%20origin%20already%20exists/"/>
-      <url>/2023/07/24/git%E9%97%AE%E9%A2%98%20error%20remote%20origin%20already%20exists/</url>
-      
-        <content type="html"><![CDATA[<h2 id="git问题error-remote-origin-already-exists"><a href="#git问题error-remote-origin-already-exists" class="headerlink" title="git问题error: remote origin already exists."></a>git问题error: remote origin already exists.</h2><p>如果你clone下来一个别人的仓库，在此基础上完成你的代码，推送到自己的仓库可能遇到如下问题：<br>error: remote origin already exists.表示远程仓库已存在。<br>因此你要进行以下操作：<br>1、先输入git remote rm origin 删除关联的origin的远程库<br>2、关联自己的仓库 git remote add origin <a href="https://gitee.com/xxxxxx.git">https://gitee.com/xxxxxx.git</a><br>3、最后git push origin master，这样就推送到自己的仓库了。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Git同时配置Gitee和GitHub</title>
-      <link href="/2023/07/24/Git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitee%E5%92%8CGitHub/"/>
-      <url>/2023/07/24/Git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitee%E5%92%8CGitHub/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Git同时配置Gitee和GitHub"><a href="#Git同时配置Gitee和GitHub" class="headerlink" title="Git同时配置Gitee和GitHub"></a>Git同时配置Gitee和GitHub</h1><p><a href="https://blog.csdn.net/Haa__/article/details/119353185">(65条消息) Git同时配置Gitee和GitHub_MsLeesSun的博客-CSDN博客</a></p>]]></content>
-      
-      
       
     </entry>
     
