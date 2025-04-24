@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>FoodList</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f5f5f5; }
+    .category {
+      background: #fff; border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;
+      border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .category-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+    }
+    .category-header strong {
+      font-size: 18px; cursor: pointer;
+    }
+    .category-header button {
+      font-size: 14px; padding: 4px 8px; border: none; border-radius: 4px; cursor: pointer; background-color: #eee;
+    }
+    .category-header button:hover {
+      background-color: #ddd;
+    }
+    .input-area { margin-top: 10px; display: none; }
+    input, textarea {
+      margin-top: 5px; display: block; width: 100%; padding: 6px;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    .store {
+      background: #f2f2f2; margin-top: 10px; padding: 10px;
+      border-left: 4px solid #ccc; border-radius: 4px;
+      position: relative;
+    }
+    .store .delete-store {
+      position: absolute; top: 8px; right: 8px;
+      background-color: #f44336; color: white;
+      border: none; padding: 2px 6px;
+      font-size: 12px; border-radius: 4px; cursor: pointer;
+    }
+    .store .delete-store:hover {
+      background-color: #d32f2f;
+    }
+    .visited-toggle {
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #loading { color: gray; font-style: italic; }
+    .edit-mode input, .edit-mode textarea { margin-bottom: 5px; }
+    .category-content.collapsed { display: none; }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .category {
+        padding: 12px;
+      }
+
+      .category-header {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .category-header strong {
+        font-size: 16px;
+      }
+
+      .category-header button {
+        font-size: 13px;
+        padding: 4px 6px;
+      }
+
+      input, textarea {
+        font-size: 14px;
+        padding: 5px;
+      }
+
+      .store {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .visited-toggle {
+        font-size: 16px;
+      }
+
+      .store .delete-store {
+        font-size: 10px;
+        padding: 1px 5px;
+        top: 5px;
+        right: 5px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<h1>FoodList 🍲</h1>
+<input id="new-category" placeholder="新分类名">
+<button onclick="addCategory()">➕ 添加分类</button>
+<p id="loading">⏳ 正在加载...</p>
+<div id="container"></div>
+<script src="/js/supabase-config.js"></script>
+<script>
+
+  let categories = [];
+
+  async function fetchData() {
+    document.getElementById("loading").style.display = 'block';
+    const { data: classificationData, error: err1 } = await supabase.from('food_classification').select('*');
+    const { data: foodData, error: err2 } = await supabase.from('food').select('*');
+    if (err1 || err2) {
+      console.error('数据加载失败', err1?.message, err2?.message);
+      alert("加载失败：" + (err1?.message || err2?.message));
+      return;
+    }
+    const classList = classificationData || [];
+    const foodList = (foodData || []).map(item => ({ ...item, visited: !!item.visited }));
+    categories = classList.map(cat => ({
+      ...cat,
+      foods: foodList.filter(f => f.classification_id === cat.id)
+    }));
+    render();
+    document.getElementById("loading").style.display = 'none';
+  }
+
+  async function addCategory() {
+    const name = document.getElementById('new-category').value.trim();
+    if (!name) return alert('请输入分类名');
+    await supabase.from('food_classification').insert([{ content: name }]);
+    document.getElementById('new-category').value = '';
+    fetchData();
+  }
+
+  async function deleteCategory(id) {
+    if (!confirm('确认删除该分类？')) return;
+    await supabase.from('food_classification').delete().eq('id', id);
+    fetchData();
+  }
+
+  async function deleteStore(id) {
+    if (!confirm('确认删除该店铺？')) return;
+    await supabase.from('food').delete().eq('id', id);
+    fetchData();
+  }
+
+  async function addFood(classificationId, container) {
+    const name = container.querySelector('.input-name').value.trim();
+    const address = container.querySelector('.input-address').value.trim();
+    const remarks = container.querySelector('.input-remarks').value.trim();
+    if (!name) return alert('请输入店铺名');
+    await supabase.from('food').insert([{ classification_id: classificationId, content: name, address, remarks }]);
+    fetchData();
+  }
+
+  async function updateCategory(id, newContent) {
+    await supabase.from('food_classification').update({ content: newContent.trim() }).eq('id', id);
+  }
+
+  async function updateStore(id, container) {
+    const content = container.querySelector('.edit-name').value.trim();
+    const address = container.querySelector('.edit-address').value.trim();
+    const remarks = container.querySelector('.edit-remarks').value.trim();
+    await supabase.from('food').update({ content, address, remarks }).eq('id', id);
+    fetchData();
+  }
+
+  async function toggleVisited(id, currentStatus) {
+    await supabase.from('food').update({ visited: !currentStatus }).eq('id', id);
+    fetchData();
+  }
+
+  function toggleInput(btn) {
+    const inputArea = btn.closest('.category').querySelector('.input-area');
+    inputArea.style.display = inputArea.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function toggleEdit(id) {
+    const store = document.getElementById(`store-${id}`);
+    const view = store.querySelector('.view-mode');
+    const edit = store.querySelector('.edit-mode');
+    view.style.display = view.style.display === 'none' ? 'block' : 'none';
+    edit.style.display = edit.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function toggleCategoryContent(btn) {
+    const contentDiv = btn.closest('.category').querySelector('.category-content');
+    if (contentDiv) {
+      contentDiv.classList.toggle('collapsed');
+      const icon = btn.querySelector('.toggle-icon');
+      if (icon) icon.textContent = contentDiv.classList.contains('collapsed') ? '➕' : '➖';
+    }
+  }
+
+  function render() {
+    const container = document.getElementById('container');
+    container.innerHTML = '';
+    categories.forEach(cat => {
+      const div = document.createElement('div');
+      div.className = 'category';
+      div.innerHTML = `
+        <div class="category-header">
+          <strong onclick="toggleCategoryContent(this)" title="点击展开/折叠">
+            ${cat.content} <span class="toggle-icon">➖</span>
+          </strong>
+          <button onclick="toggleInput(this)">📝 添加店铺</button>
+          <button onclick="deleteCategory('${cat.id}')" style="background-color:#f44336;color:white;">🗑 删除分类</button>
+        </div>
+        <div class="category-content">
+          <div class="input-area">
+            <input class="input-name" placeholder="店铺名">
+            <input class="input-address" placeholder="地址（可选）">
+            <textarea class="input-remarks" placeholder="备注（可选）"></textarea>
+            <button onclick="addFood('${cat.id}', this.parentElement)">➕ 添加店铺</button>
+          </div>
+          ${cat.foods.map(f => `
+            <div class="store" id="store-${f.id}">
+              <div class="view-mode">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <div class="visited-toggle" onclick="toggleVisited('${f.id}', ${!!f.visited})" title="点击标记是否吃过">
+                    ${f.visited ? '✅' : '⭕'}
+                  </div>
+                  <strong>${f.content}</strong>
+                </div>
+                地址：${f.address || '无'}<br>
+                备注：${f.remarks || '无'}<br>
+                <button class="delete-store" onclick="deleteStore('${f.id}')">🗑</button>
+                <button onclick="toggleEdit('${f.id}')">✏️ 编辑</button>
+              </div>
+              <div class="edit-mode" style="display:none;">
+                <input class="edit-name" value="${f.content}">
+                <input class="edit-address" value="${f.address || ''}">
+                <textarea class="edit-remarks">${f.remarks || ''}</textarea>
+                <button onclick="updateStore('${f.id}', this.parentElement)">💾 更新</button>
+                <button onclick="deleteStore('${f.id}')">🗑 删除</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  fetchData();
+</script>
+</body>
+</html>
